@@ -1,0 +1,368 @@
+/* Background Video */
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+@media (min-aspect-ratio:16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+/* ----------------------------------------------------------- */
+
+/* Heading */
+h1{
+    text-align: center;
+    font-size: 100px;
+    color: #ffffffd7;
+    font-weight: 600;
+    transition: 0.5s;
+    font-family: 'ADLaM Display', cursive;
+    margin-top: 0px;
+    cursor: url(./asset/Final-weather-icon_-fotor-20230915164123.png),pointer;
+}
+h1:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
+}
+/* --------------------------------------------------------- */
+
+/* Grant location Button */
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn {
+    min-width: 170px;
+    min-height: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    font-weight: 700;
+    color:white;
+    background: linear-gradient(90deg, #075875ea 0%, #075875a6 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 0px 0px 24px 2px #075875e6;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    }
+  
+  .btn::before {
+  content: '';
+    border-radius: 1000px;
+    min-width: calc(170px + 10px);
+    min-height: calc(40px + 10px);
+    border: 4px solid #075875b7;
+    box-shadow: 0 0 60px #075875;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+    cursor: pointer;
+  }
+  
+  .btn:hover, .btn:focus {
+    color:white;
+    transform: translateY(-6px);
+  }
+  
+  .btn:hover::before, .btn:focus::before {
+    opacity: 1;
+  }
+  
+  .btn::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #075875e8;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+  .btn:hover::after, .btn:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 220px;
+      height: 220px;
+      opacity: 0;
+    }
+  }
+
+/* ------------------------------------------------------------------------- */
+.current-tab {
+    background-color:rgba(219, 226, 239, 0.749);
+}
+
+*,*::before,*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merriweather Sans', sans-serif;
+ cursor: url(./asset/Final-weather-icon_-fotor-20230915164123.png),pointer;
+}
+
+.wrapper{
+  height:100vh;
+}
+
+.tab-container {
+  /* width:100%; */
+  max-width: 550px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab{
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: 'ADLaM Display', cursive;
+  letter-spacing: 1.75px;
+  border-radius: 10px;
+  padding-top: 2px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  padding-right: 10px;
+  box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
+
+}
+
+.sub-container{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.grant-location-container{
+  /* Making invisible  */
+  display:none; 
+ }
+
+.grant-location-container.active{
+ display:flex;
+}
+
+.grant-location-container img{
+ margin-bottom: 2rem;
+ margin-top: 20px;
+}
+
+.grant-location-container p:first-of-type{  /*Container ka first paragraph*/
+ font-size: 3rem;
+ font-weight: 300; 
+ font-family: 'ADLaM Display', cursive;
+ -webkit-text-stroke: 1.5px #000000;
+ color: transparent;
+}
+
+.grant-location-container p:last-of-type{ /*Container ka last paragraph*/
+ font-size:1.2rem;
+ font-weight: 200;
+ margin-top: 0.75rem;
+ margin-bottom: 1.75rem;
+ letter-spacing: 0.75px;
+ /* font-family: 'ADLaM Display', cursive; */
+}
+
+.loading-container{
+  display: none;
+}
+
+.loading-container.active{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-container p{
+  font-family: 'ADLaM Display', cursive;
+  font-size:1.2rem;
+  font-weight: 200;
+  letter-spacing: 0.75px;
+  color: rgba(0, 0, 0, 0.507);
+  padding-left: 20px;
+}
+
+.user-info-container{
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  display:none;
+}
+
+.user-info-container.active{
+  display: flex;
+}
+
+.name{
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.user-info-container p[data-cityName]{
+  font-size:1.5rem;
+  font-weight:200;
+  margin-right: 20px;
+  font-family: 'ADLaM Display', cursive;
+}
+
+.user-info-container img[data-countryIcon]{
+  width:30px;
+  height:auto;
+}
+.user-info-container p[data-weatherDesc]{
+  text-transform: capitalize;
+  font-family: 'ADLaM Display', cursive;
+}
+.user-info-container img[data-weatherIcon]{
+  width: auto;
+  height: 90px;
+}
+.user-info-container p[data-temp] {
+  font-size:2.75rem;
+  font-family: 'ADLaM Display', cursive;
+}
+
+.parameter-container{
+  width:90%;
+  display: flex;
+  gap: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.parameter{
+  width:30%;
+  max-width:200px;
+  background-color: rgba(219, 226, 239, 0.5);;
+  border-radius: 10px;
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+  gap:10px 0; 
+  box-shadow: 0px 0px 20px 1px rgb(255, 255, 255);
+  align-items: center;
+}   
+.parameter:hover{
+  transform: translateX(10);
+}
+
+.parameter img{
+  width:50px;
+  height:50px;
+}
+
+.parameter p:first-of-type{
+  font-size: 1.15rem;
+  font-weight:600;
+  text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.form-container{
+  display: none;
+  width:90%;
+  max-width:550px;
+  margin:0 auto;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px; 
+  margin-bottom: 1rem;
+}
+
+.form-container.active{
+  display: flex;
+}
+
+.form-container input{
+  all:unset;
+  width: calc(100% - 80px);
+  height:40px;
+  padding: 0 20px;
+  background-color:rgba(255, 255, 255, 0.772);
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 5px white;
+  cursor: text;
+}
+
+.form-container input::placeholder{
+  color: black;
+}
+
+.form-container .btnn {
+  padding:unset;
+  all: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin-bottom:1px;
+  margin-left: 20px;
+  border: none;
+  box-shadow: 0px 0px 4px 5px white;
+  cursor: pointer;
+}
+
+.form-container .btnn img{
+  cursor: pointer;
+}
+.nocity{
+  display: none;
+}
+.nocity.active{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nocity img{
+  margin-top: 70px;
+  height: 300px;
+  width: auto;
+  border-radius: 40px;
+}

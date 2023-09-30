@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="./asset/cloudy-weather.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Video bg -->
+    <video autoplay loop muted plays-inline class="back-video">
+      <source
+        src="./asset/pexels-miguel-á-padriñán-6772136 (2160p).mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="wrapper">
+      <h1>WEATHER APP</h1>
+      <!-- Tab container -->
+      <div class="tab-container">
+        <p class="tab" data-userWeather>Your Weather</p>
+        <p class="tab" data-searchWeather>Search Weather</p>
+      </div>
+
+      <div class="weather-container">
+
+        <!-- grant location container-->
+        <div class="sub-container grant-location-container">
+          <img
+            src="./asset/location.png"
+            width="100"
+            height="100"
+            loading="lazy"
+          />
+          <p>Grant Location Access</p>
+          <p>Allow Access to get weather Information</p>
+
+          <!-- Animation Grant location Button -->
+          <div class="wrap">
+            <button class="btn" data-grantAccess>Grant Access</button>
+          </div>
+        </div>
+
+        <!-- search form -> form-container-->
+        <form class="form-container" data-searchForm>
+          <input placeholder="Search for City..." data-searchInput />
+          <button class="btnn" type="submit" >
+            <img
+              src="./asset/icons8-search-256.png"
+              width="20"
+              height="20"
+              loading="lazy"
+            />
+          </button>
+        </form>
+
+        <!--- loading screen container -->
+        <div class="loading-container">
+          <img src="./asset/loading.gif" width="150" height="150" />
+          <p>LOADING...</p>
+        </div>
+
+        <!-- show weather info -->
+        <div class="user-info-container">
+          <!--city name and Flag-->
+          <div class="name">
+            <p data-cityName></p>
+            <img data-countryIcon />
+          </div>
+
+          <!-- weather descriptuion-->
+          <p data-weatherDesc></p>
+          <!--weather Icon-->
+          <img data-weatherIcon />
+          <!--temperature-->
+          <p data-temp></p>
+
+          <!--3 cards - parameters-->
+          <div class="parameter-container">
+            <!--card 1-->
+            <div class="parameter">
+              <img src="./asset/wind.png" />
+              <p>WINDSPEED</p>
+              <p data-windspeed></p>
+            </div>
+
+            <!--card 2-->
+            <div class="parameter">
+              <img src="./asset/humidity.png" />
+              <p>HUMIDITY</p>
+              <p data-humidity></p>
+            </div>
+
+            <!--card 3-->
+            <div class="parameter">
+              <img src="./asset/cloud.png" />
+              <p>CLOUDS</p>
+              <p data-cloudiness></p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="nocity">
+        <img src="./asset/nofound.jpg" alt="">
+      </div>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
